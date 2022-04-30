@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>ChedPermis</title>
+      
+      <!-- inject:css -->
+      <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+      <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
+      <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+
+      <!-- Calendar-Css -->
+      <link href="./calendar/css/main.min.css" rel="stylesheet">	
+      <link href="./calendar/css/style.css" rel="stylesheet">
+   </head>
+   <body>
+
+
+
+
+
+
+      <div class="container-scroller">
+
+         <nav class="navbar default-layout col-lg-12 col-12 p-0  d-flex align-items-top flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+               <div class="me-3">
+                  <button class="navbar-toggler navbar-toggler align-self-right fixed-top " type="button" data-bs-toggle="minimize">
+                  <span class="icon-menu"></span>
+                  </button>
+               </div>
+
+        <div>
+          <a class="navbar-brand brand-logo fixed-top mr-2" href="index.html">
+            <img src="images/favicon.png" alt="logo" />
+          </a>
+        </div>
+            
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-top">
+               <ul class="navbar-nav">
+                  <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+                     <h1 class="welcome-text">Bonjour, <span class="text-black fw-bold">Utilisateur</span></h1>
+                     <h3 class="welcome-sub-text">Votre résumé des performances cette semaine</h3>
+                  </li>
+               </ul>
+               <ul class="navbar-nav ms-auto">
+                  <li class="nav-item d-none d-lg-block">
+                     <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
+                        <span class="input-group-addon input-group-prepend border-right">
+                        <span class="icon-calendar input-group-text calendar-icon"></span>
+                        </span>
+                        <input type="text" class="form-control">
+                     </div>
+                  </li>
+                  <li class="nav-item">
+                     <form class="search-form" action="#">
+                        <i class="icon-search"></i>
+                        <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+                     </form>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                     <i class="icon-bell"></i>
+                     <span class="count"></span>
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item preview-item">
+                           <div class="preview-thumbnail">
+                              <img src="images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                           </div>
+                           <div class="preview-item-content flex-grow py-2">
+                              <p class="preview-subject ellipsis font-weight-medium text-dark">Utilisateur</p>
+                              <p class="fw-light small-text mb-0"> La rencontre est annulée </p>
+                           </div>
+                        </a>
+                        <a class="dropdown-item preview-item">
+                           <div class="preview-thumbnail">
+                              <img src="images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                           </div>
+                           <div class="preview-item-content flex-grow py-2">
+                              <p class="preview-subject ellipsis font-weight-medium text-dark">Utilisateur</p>
+                              <p class="fw-light small-text mb-0"> La rencontre est annulée </p>
+                           </div>
+                        </a>
+                        <a class="dropdown-item preview-item">
+                           <div class="preview-thumbnail">
+                              <img src="images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                           </div>
+                           <div class="preview-item-content flex-grow py-2">
+                              <p class="preview-subject ellipsis font-weight-medium text-dark">Utilisateur </p>
+                              <p class="fw-light small-text mb-0"> La rencontre est annulée </p>
+                           </div>
+                        </a>
+                     </div>
+                  </li>
+                  <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+                     <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                     <img class="img-xs rounded-circle" src="images/faces/face8.jpg" alt="Profile image"> </a>
+                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                        <div class="dropdown-header text-center">
+                           <img class="img-md rounded-circle" src="images/faces/face8.jpg" alt="Profile image">
+                           <p class="mb-1 mt-3 font-weight-semibold">Utilisateur</p>
+                           <p class="fw-light text-muted mb-0">Utilisateur@gmail.com</p>
+                        </div>
+                        <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon profil <span class="badge badge-pill badge-danger">1</span></a>
+                        <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activité</a>
+                        <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i> FAQ</a>
+                        <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Déconnecter</a>
+                     </div>
+                  </li>
+               </ul>
+               <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+               <span class="mdi mdi-menu"></span>
+               </button>
+            </div>
+         </nav>
+
+         <div class="container-fluid page-body-wrapper">
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+               <ul class="nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="index.html">
+                     <i class="mdi mdi-grid-large menu-icon"></i>
+                     <span class="menu-title">Dashboard</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="candidat.html">
+                     <i class="menu-icon mdi mdi-account-search"></i>
+                     <span class="menu-title">Candidat</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                     <i class="menu-icon mdi mdi-account-card-details"></i>
+                     <span class="menu-title">Employee</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                     <i class="menu-icon mdi mdi-car"></i>
+                     <span class="menu-title">Véhicules</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="paiment.html">
+                     <i class="menu-icon mdi mdi-chart-line"></i>
+                     <span class="menu-title">Revenue et Depence</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="calendar.html">
+                     <i class="menu-icon mdi mdi-calendar-clock"></i>
+                     <span class="menu-title">Calendrier</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                     <i class="menu-icon mdi mdi-playlist-check"></i>
+                     <span class="menu-title">Tasks</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="faq.html">
+                     <i class="menu-icon mdi mdi-comment-question-outline"></i>
+                     <span class="menu-title">FAQ</span>
+                     </a> 
+                  </li>
+               </ul>
+            </nav>
+
+            <!-- ****************************************** Calendar ****************************************** -->
+            <div class="main-panel">
+
+               <div class="content-wrapper">
+                  <div class="row">
+                     <div class="col-sm-12">
+                        <div class="home-tab">
+                           <div class="tab-content tab-content-basic">
+                              <div class="row justify-content-around">
+                                 <div class="col-cus-xl-3 col-cus-md-4 col-cus-sm-12 col-cus-12 pe-1">
+                                    <div class="card">
+                                       <div class="card-body">
+                                          <h4 class="card-intro-title">Calendar</h4>
+                                          <div class="">
+                                                <div id="external-events" class="my-3">
+                                                   <p>Drag and drop your event or click in the calendar</p>
+                                                   <div class="external-event btn-primary light" data-class="bg-primary"><i class="fa fa-move"></i><span>New Theme Release</span></div>
+                                                   <div class="external-event btn-warning light" data-class="bg-warning"><i class="fa fa-move"></i>My Event
+                                                   </div>
+                                                   <div class="external-event btn-danger light" data-class="bg-danger"><i class="fa fa-move"></i>Meet manager</div>
+                                                   <div class="external-event btn-info light" data-class="bg-info"><i class="fa fa-move"></i>Create New theme</div>
+                                                   <div class="external-event btn-dark light" data-class="bg-dark"><i class="fa fa-move"></i>Project Launch</div>
+                                                   <div class="external-event btn-secondary light" data-class="bg-secondary"><i class="fa fa-move"></i>Meeting</div>
+                                                </div>
+                                                      <!-- checkbox -->
+                                             <div class="checkbox form-check checkbox-event custom-checkbox pt-3 pb-5">
+                                                <input type="checkbox" class="form-check-input" id="drop-remove">
+                                                <label class="form-check-label" for="drop-remove">Remove After Drop</label>
+                                             </div>   
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-cus-xl-9 col-cus-md-8 col-cus-sm-12 col-cus-12 ps-1">
+                                       <div class="card">
+                                          <div class="card-body">
+                                             <div id="calendar" class="app-fullcalendar fc fc-media-screen fc-direction-ltr fc-theme-standard"><div class="fc-header-toolbar fc-toolbar fc-toolbar-ltr"><div class="fc-toolbar-chunk"><div class="fc-button-group"><button class="fc-prev-button fc-button fc-button-primary" type="button" aria-label="prev"><span class="fc-icon fc-icon-chevron-left"></span></button><button class="fc-next-button fc-button fc-button-primary" type="button" aria-label="next"><span class="fc-icon fc-icon-chevron-right"></span></button></div><button class="fc-today-button fc-button fc-button-primary" type="button">today</button></div><div class="fc-toolbar-chunk"><h2 class="fc-toolbar-title">February 10, 2021</h2></div><div class="fc-toolbar-chunk"><div class="fc-button-group"><button class="fc-dayGridMonth-button fc-button fc-button-primary" type="button">month</button><button class="fc-timeGridWeek-button fc-button fc-button-primary" type="button">week</button><button class="fc-timeGridDay-button fc-button fc-button-primary fc-button-active" type="button">day</button></div></div></div><div class="fc-view-harness fc-view-harness-active" style="height: 469.63px;"><div class="fc-timegrid fc-timeGridDay-view fc-view"><table class="fc-scrollgrid  fc-scrollgrid-liquid"><thead><tr class="fc-scrollgrid-section fc-scrollgrid-section-header "><td><div class="fc-scroller-harness"><div class="fc-scroller" style="overflow: hidden;"><table class="fc-col-header " style="width: 615px;"><colgroup><col style="width: 52px;"></colgroup><tbody><tr><th class="fc-timegrid-axis fc-scrollgrid-shrink"><div class="fc-timegrid-axis-frame fc-scrollgrid-shrink-frame fc-timegrid-axis-frame-liquid"><a class="fc-timegrid-axis-cushion fc-scrollgrid-shrink-cushion fc-scrollgrid-sync-inner" data-navlink="{&quot;date&quot;:&quot;2021-02-10&quot;,&quot;type&quot;:&quot;week&quot;}" tabindex="0">W 6</a></div></th><th class="fc-col-header-cell fc-day fc-day-wed fc-day-past" data-date="2021-02-10"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion ">Wednesday</a></div></th></tr></tbody></table></div></div></td></tr></thead><tbody><tr class="fc-scrollgrid-section fc-scrollgrid-section-body "><td><div class="fc-scroller-harness"><div class="fc-scroller" style="overflow: hidden;"><div class="fc-daygrid-body fc-daygrid-body-unbalanced fc-daygrid-body-natural" style="width: 615px;"><table class="fc-scrollgrid-sync-table" style="width: 615px;"><colgroup><col style="width: 52px;"></colgroup><tbody><tr><td class="fc-timegrid-axis fc-scrollgrid-shrink"><div class="fc-timegrid-axis-frame fc-scrollgrid-shrink-frame fc-timegrid-axis-frame-liquid"><span class="fc-timegrid-axis-cushion fc-scrollgrid-shrink-cushion fc-scrollgrid-sync-inner">all-day</span></div></td><td class="fc-daygrid-day fc-day fc-day-wed fc-day-past" data-date="2021-02-10"><div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner"><div class="fc-daygrid-day-events"></div><div class="fc-daygrid-day-bg"></div></div></td></tr></tbody></table></div></div></div></td></tr><tr class="fc-scrollgrid-section"><td class="fc-timegrid-divider fc-cell-shaded"></td></tr><tr class="fc-scrollgrid-section fc-scrollgrid-section-body  fc-scrollgrid-section-liquid"><td><div class="fc-scroller-harness fc-scroller-harness-liquid"><div class="fc-scroller fc-scroller-liquid-absolute" style="overflow: hidden auto;"><div class="fc-timegrid-body" style="width: 615px;"><div class="fc-timegrid-slots"><table class="" style="width: 615px;"><colgroup><col style="width: 52px;"></colgroup><tbody><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="00:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">12am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="00:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="00:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="00:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="01:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">1am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="01:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="01:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="01:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="02:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">2am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="02:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="02:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="02:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="03:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">3am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="03:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="03:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="03:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="04:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">4am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="04:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="04:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="04:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="05:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">5am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="05:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="05:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="05:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="06:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">6am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="06:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="06:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="06:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="07:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">7am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="07:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="07:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="07:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="08:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">8am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="08:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="08:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="08:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="09:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">9am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="09:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="09:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="09:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="10:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">10am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="10:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="10:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="10:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="11:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">11am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="11:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="11:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="11:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="12:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">12pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="12:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="12:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="12:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="13:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">1pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="13:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="13:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="13:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="14:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">2pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="14:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="14:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="14:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="15:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">3pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="15:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="15:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="15:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="16:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">4pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="16:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="16:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="16:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="17:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">5pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="17:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="17:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="17:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="18:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">6pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="18:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="18:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="18:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="19:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">7pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="19:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="19:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="19:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="20:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">8pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="20:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="20:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="20:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="21:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">9pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="21:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="21:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="21:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="22:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">10pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="22:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="22:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="22:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="23:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">11pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="23:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="23:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="23:30:00"></td></tr></tbody></table></div><div class="fc-timegrid-cols"><table style="width: 615px;"><colgroup><col style="width: 52px;"></colgroup><tbody><tr><td class="fc-timegrid-col fc-timegrid-axis"><div class="fc-timegrid-col-frame"><div class="fc-timegrid-now-indicator-container"></div></div></td><td class="fc-timegrid-col fc-day fc-day-wed fc-day-past" data-date="2021-02-10"><div class="fc-timegrid-col-frame"><div class="fc-timegrid-col-bg"></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-now-indicator-container"></div></div></td></tr></tbody></table></div></div></div></div></td></tr></tbody></table></div></div></div>
+                                          </div>
+                                       </div>
+                                 </div>
+                              </div>
+                              <div class="modal fade none-border" id="add-category" aria-hidden="true" style="display: none;">
+                                 <div class="modal-dialog">
+                                    <div class="modal-content">
+                                       <div class="modal-header">
+                                             <h4 class="modal-title"><strong>Add a category</strong></h4>
+                                       </div>
+                                       <div class="modal-body">
+                                             <form>
+                                                <div class="row">
+                                                   <div class="col-md-6">
+                                                         <label class="control-label form-label">Category Name</label>
+                                                         <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name">
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                         <label class="control-label form-label">Choose Category Color</label>
+                                                         <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+                                                            <option value="success">Success</option>
+                                                            <option value="danger">Danger</option>
+                                                            <option value="info">Info</option>
+                                                            <option value="pink">Pink</option>
+                                                            <option value="primary">Primary</option>
+                                                            <option value="warning">Warning</option>
+                                                         </select>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                       </div>
+                                       <div class="modal-footer">
+                                             <button type="button" class="btn btn-default waves-effect" data-bs-dismiss="modal">Close</button>
+                                             <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-bs-toggle="modal">Save</button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              </div>
+                           </div>
+                        </div>
+                  </div>
+               </div>
+
+            <!-- ****************************************** End Calendar ****************************************** -->
+
+
+                  <footer class="footer">
+                  <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                     <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">ChedPermis</a> from FPT.</span>
+                     <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
+                  </div>
+               </footer>
+
+            </div>
+            <!-- main-panel ends -->
+         </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <!-- plugins:js -->
+      <script src="vendors/js/vendor.bundle.base.js"></script>
+      <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+      <script src="js/off-canvas.js"></script>
+      <script src="js/template.js"></script>
+      <script src="js/dashboard.js"></script>
+
+
+
+
+      <!-- Calendar-Js -->
+   <script src="./calendar/js/global.min.js"></script>
+   <script src="./calendar/js/moment.min.js"></script>
+   <script src="./calendar/js/main.min.js"></script>
+	<script src="./calendar/js/fullcalendar-init.js"></script>
+	<script src="./calendar/js/jquery.nice-select.min.js"></script>
+   <script src="./calendar/js/custom.min.js"></script>
+	<script src="./calendar/js/dlabnav-init.js"></script>
+	<script src="./calendar/js/demo.js"></script>
+
+
+   </body>
+</html>
+

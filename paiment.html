@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>ChedPermis</title>
+      <!-- plugins:css -->
+      <!-- <link href="css/sb-admin-2.min.css" rel="stylesheet"> -->
+      <link rel="stylesheet" href="vendors/feather/feather.css">
+      <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+      <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+      <link rel="stylesheet" href="vendors/typicons/typicons.css">
+      <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+      <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+      <!-- endinject -->
+
+      <!-- table begin -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+      <link href="./candidat/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+      <link href="./candidat/css/style.css" rel="stylesheet">
+      <!-- table end -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+      <!-- End plugin css for this page -->
+      <!-- inject:css -->
+      <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+      <!-- endinject -->
+      <link rel="shortcut icon" href="images/favicon.png" />
+      <link href="./style.css" rel="stylesheet">
+
+   </head>
+   <body>
+      <div class="container-scroller">
+         <!-- partial:partials/_navbar.html -->
+         <nav class="navbar default-layout col-lg-12 col-12 p-0  d-flex align-items-top flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+               <div class="me-3">
+                  <button class="navbar-toggler navbar-toggler align-self-right fixed-top " type="button" data-bs-toggle="minimize">
+                  <span class="icon-menu"></span>
+                  </button>
+               </div>
+
+        <div>
+          <a class="navbar-brand brand-logo fixed-top mr-2" href="index.html">
+            <img src="images/favicon.png" alt="logo" />
+          </a>
+        </div>
+            
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-top">
+               <ul class="navbar-nav">
+                  <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+                     <h1 class="welcome-text">Bonjour, <span class="text-black fw-bold">Utilisateur</span></h1>
+                     <h3 class="welcome-sub-text">Votre résumé des performances cette semaine</h3>
+                  </li>
+               </ul>
+               <ul class="navbar-nav ms-auto">
+                  <li class="nav-item d-none d-lg-block">
+                     <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
+                        <span class="input-group-addon input-group-prepend border-right">
+                        <span class="icon-calendar input-group-text calendar-icon"></span>
+                        </span>
+                        <input type="text" class="form-control">
+                     </div>
+                  </li>
+                  <li class="nav-item">
+                     <form class="search-form" action="#">
+                        <i class="icon-search"></i>
+                        <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+                     </form>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                     <i class="icon-bell"></i>
+                     <span class="count"></span>
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item preview-item">
+                           <div class="preview-thumbnail">
+                              <img src="images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                           </div>
+                           <div class="preview-item-content flex-grow py-2">
+                              <p class="preview-subject ellipsis font-weight-medium text-dark">Utilisateur</p>
+                              <p class="fw-light small-text mb-0"> La rencontre est annulée </p>
+                           </div>
+                        </a>
+                        <a class="dropdown-item preview-item">
+                           <div class="preview-thumbnail">
+                              <img src="images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                           </div>
+                           <div class="preview-item-content flex-grow py-2">
+                              <p class="preview-subject ellipsis font-weight-medium text-dark">Utilisateur</p>
+                              <p class="fw-light small-text mb-0"> La rencontre est annulée </p>
+                           </div>
+                        </a>
+                        <a class="dropdown-item preview-item">
+                           <div class="preview-thumbnail">
+                              <img src="images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                           </div>
+                           <div class="preview-item-content flex-grow py-2">
+                              <p class="preview-subject ellipsis font-weight-medium text-dark">Utilisateur </p>
+                              <p class="fw-light small-text mb-0"> La rencontre est annulée </p>
+                           </div>
+                        </a>
+                     </div>
+                  </li>
+                  <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+                     <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                     <img class="img-xs rounded-circle" src="images/faces/face8.jpg" alt="Profile image"> </a>
+                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                        <div class="dropdown-header text-center">
+                           <img class="img-md rounded-circle" src="images/faces/face8.jpg" alt="Profile image">
+                           <p class="mb-1 mt-3 font-weight-semibold">Utilisateur</p>
+                           <p class="fw-light text-muted mb-0">Utilisateur@gmail.com</p>
+                        </div>
+                        <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon profil <span class="badge badge-pill badge-danger">1</span></a>
+                        <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activité</a>
+                        <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i> FAQ</a>
+                        <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Déconnecter</a>
+                     </div>
+                  </li>
+               </ul>
+               <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+               <span class="mdi mdi-menu"></span>
+               </button>
+            </div>
+         </nav>
+         <!-- partial -->
+         <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+               <ul class="nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="index.html">
+                     <i class="mdi mdi-grid-large menu-icon"></i>
+                     <span class="menu-title">Dashboard</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="candidat.html">
+                     <i class="menu-icon mdi mdi-account-search"></i>
+                     <span class="menu-title">Candidat</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                     <i class="menu-icon mdi mdi-account-card-details"></i>
+                     <span class="menu-title">Employee</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                     <i class="menu-icon mdi mdi-car"></i>
+                     <span class="menu-title">Véhicules</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="paiment.html">
+                     <i class="menu-icon mdi mdi-chart-line"></i>
+                     <span class="menu-title">Revenue et Depence</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="calendar.html">
+                     <i class="menu-icon mdi mdi-calendar-clock"></i>
+                     <span class="menu-title">Calendrier</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                     <i class="menu-icon mdi mdi-playlist-check"></i>
+                     <span class="menu-title">Tasks</span>
+                     </a> 
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="faq.html">
+                     <i class="menu-icon mdi mdi-comment-question-outline"></i>
+                     <span class="menu-title">FAQ</span>
+                     </a> 
+                  </li>
+               </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+               <div class="content-wrapper content-wrapper-candidat">
+                  
+                  <!-- label & date range begin-->
+                  <div class="row">
+                     <div class="col-sm-6 col-5">
+                        <div class="row justify-content-start">
+                           <div class="m-2">
+                              <h3>Revenue et Depence</h3>
+                              <nav aria-label="breadcrumb">
+                                 <ol class="breadcrumb">
+                                   <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                   <li class="breadcrumb-item active" aria-current="page">Revenue et Depence</li>
+                                 </ol>
+                               </nav>
+                           </div>
+                        </div>
+                        
+                     </div>
+                  </div>
+                  <!-- label & date range end-->
+                  
+                  <!-- cards begin-->
+                  <div class="row ">
+                     <div class="col-xl-3 col-lg-3 col-md-4">
+                        <div class="card l-bg-blue-dark">
+                            <div class="card-statistic-3 p-3">
+                                <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
+                                <div class="mb-4">
+                                    <h5 class="card-title mb-0">Customers</h5>
+                                </div>
+                                <div class="row align-items-center mb-2 d-flex">
+                                    <div class="col-8">
+                                        <h2 class="d-flex align-items-center mb-0">
+                                            15.07k
+                                        </h2>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <span>9% <i class="fa fa-arrow-up"></i></span>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                                    <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-4">
+                     <div class="card l-bg-green-dark">
+                         <div class="card-statistic-3 p-3">
+                             <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
+                             <div class="mb-4">
+                                 <h5 class="card-title mb-0">Ticket Resolved</h5>
+                             </div>
+                             <div class="row align-items-center mb-2 d-flex">
+                                 <div class="col-8">
+                                     <h2 class="d-flex align-items-center mb-0">
+                                         578
+                                     </h2>
+                                 </div>
+                                 <div class="col-4 text-right">
+                                     <span>10% <i class="fa fa-arrow-up"></i></span>
+                                 </div>
+                             </div>
+                             <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                                 <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                             </div>
+                         </div>
+                     </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-4">
+                        <div class="card l-bg-green-dark">
+                            <div class="card-statistic-3 p-3">
+                                <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
+                                <div class="mb-4">
+                                    <h5 class="card-title mb-0">Ticket Resolved</h5>
+                                </div>
+                                <div class="row align-items-center mb-2 d-flex">
+                                    <div class="col-8">
+                                        <h2 class="d-flex align-items-center mb-0">
+                                            578
+                                        </h2>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <span>10% <i class="fa fa-arrow-up"></i></span>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                                    <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="container-fluid">
+                        <div class="form-head mb-4">
+                            <h2 class="text-black font-w600 mb-0">My Wallet</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-9 col-xxl-12">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="card1 ">
+                                            <div class="card-header1 flex-wrap border-0 pb-0 align-items-end">
+                                                <div class="d-flex align-items-center mb-3 me-3">
+                                                    <svg class="me-3" width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M59.4999 31.688V19.8333C59.4999 19.0818 59.2014 18.3612 58.6701 17.8298C58.1387 17.2985 57.418 17 56.6666 17H11.3333C10.5818 17 9.86114 16.7014 9.32978 16.1701C8.79843 15.6387 8.49992 14.9181 8.49992 14.1666C8.49992 13.4152 8.79843 12.6945 9.32978 12.1632C9.86114 11.6318 10.5818 11.3333 11.3333 11.3333H56.6666C57.418 11.3333 58.1387 11.0348 58.6701 10.5034C59.2014 9.97208 59.4999 9.25141 59.4999 8.49996C59.4999 7.74851 59.2014 7.02784 58.6701 6.49649C58.1387 5.96514 57.418 5.66663 56.6666 5.66663H11.3333C9.07891 5.66663 6.9169 6.56216 5.32284 8.15622C3.72878 9.75028 2.83325 11.9123 2.83325 14.1666V53.8333C2.83325 56.0876 3.72878 58.2496 5.32284 59.8437C6.9169 61.4378 9.07891 62.3333 11.3333 62.3333H56.6666C57.418 62.3333 58.1387 62.0348 58.6701 61.5034C59.2014 60.9721 59.4999 60.2514 59.4999 59.5V47.6453C61.1561 47.0683 62.5917 45.9902 63.6076 44.5605C64.6235 43.1308 65.1693 41.4205 65.1693 39.6666C65.1693 37.9128 64.6235 36.2024 63.6076 34.7727C62.5917 33.3431 61.1561 32.265 59.4999 31.688ZM53.8333 56.6666H11.3333C10.5818 56.6666 9.86114 56.3681 9.32978 55.8368C8.79843 55.3054 8.49992 54.5847 8.49992 53.8333V22.1453C9.40731 22.4809 10.3658 22.6572 11.3333 22.6666H53.8333V31.1666H45.3333C43.0789 31.1666 40.9169 32.0622 39.3228 33.6562C37.7288 35.2503 36.8333 37.4123 36.8333 39.6666C36.8333 41.921 37.7288 44.083 39.3228 45.677C40.9169 47.2711 43.0789 48.1666 45.3333 48.1666H53.8333V56.6666ZM56.6666 42.5H45.3333C44.5818 42.5 43.8611 42.2015 43.3298 41.6701C42.7984 41.1387 42.4999 40.4181 42.4999 39.6666C42.4999 38.9152 42.7984 38.1945 43.3298 37.6632C43.8611 37.1318 44.5818 36.8333 45.3333 36.8333H56.6666C57.418 36.8333 58.1387 37.1318 58.6701 37.6632C59.2014 38.1945 59.4999 38.9152 59.4999 39.6666C59.4999 40.4181 59.2014 41.1387 58.6701 41.6701C58.1387 42.2015 57.418 42.5 56.6666 42.5Z" fill="#1EAAE7"/>
+                                                    </svg>
+                                                    <div class="me-auto1">
+                                                        <h5 class="fs-20 text-black1 font-w600">Main Balance</h5>
+                                                        <span class="text-num1 text-black1 font-w600">$673,412.66</span>
+                                                    </div>
+                                                </div>
+                                                <div class="me-3 mb-3">
+                                                    <p class="fs-14 mb-1">VALID THRU</p>
+                                                    <span class="text-black1">08/21</span>
+                                                </div>
+                                                <div class="me-3 mb-3">
+                                                    <p class="fs-14 mb-1">CARD HOLDER</p>
+                                                    <span class="text-black1">Franklin Jr.</span>
+                                                </div>
+                                                <span class="fs-20 text-black1 font-w500 me-3 mb-3">**** **** **** 1234</span>
+                                                <div class="dropdown mb-auto">
+                                                    <div class="btn-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M10 11.9999C10 13.1045 10.8954 13.9999 12 13.9999C13.1046 13.9999 14 13.1045 14 11.9999C14 10.8954 13.1046 9.99994 12 9.99994C10.8954 9.99994 10 10.8954 10 11.9999Z" fill="black"/>
+                                                            <path d="M10 4.00006C10 5.10463 10.8954 6.00006 12 6.00006C13.1046 6.00006 14 5.10463 14 4.00006C14 2.89549 13.1046 2.00006 12 2.00006C10.8954 2.00006 10 2.89549 10 4.00006Z" fill="black"/>
+                                                            <path d="M10 20C10 21.1046 10.8954 22 12 22C13.1046 22 14 21.1046 14 20C14 18.8954 13.1046 18 12 18C10.8954 18 10 18.8954 10 20Z" fill="black"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                        <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body1">
+                                                <div class="progress1 mb" style="height:18px;">
+                                                    <div class="progress-bar1 bg-inverse progress-animated1" style="width: 60%; height:18px;" role="progressbar">
+                                                        <span class="sr-only">60% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  </div>
+                  <!-- cards end -->
+                  <!-- search begin -->
+                  <div class="row justify-content-end mb-3">
+                     <div class="col-xl-6 col-lg-6 col-md-6 col-6">
+                        <div class="input-field2">
+                           <button class="btn-search" type="button">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                               <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                             </svg>
+                           </button>
+                           <input id="search" type="text" placeholder=""/>
+                         </div>
+                     </div>
+                     <div class="col-xl-2 col-lg-6 col-md-6 col-6">
+                        <button type="button" class="btn btn-primary btn-rounded btn-fw w-100">
+                           <i class="mdi mdi-plus"></i> Ajouter paiement
+                        </button>
+                     </div>
+                     
+                     <!-- <div class="col-xl-2 col-lg-4 col-md-3 col-6">
+                        <button type="button" class="btn btn-primary btn-rounded btn-fw">
+                           <i class="fa-solid fa-plus"></i> Ajouter Candidat
+                        </button>
+                     </div> -->
+                  </div>
+                  <!-- search end -->
+                  <!-- DataTale begin-->
+                  <div class="row">
+                     <div class="col-12">
+                        <div class="card card-rounded">
+                           <div class="card-header">
+                              <h4 class="card-title card-title-dash">Profile Datatable</h4>
+                           </div>
+                           <div class="card-body card-table-c">	
+                              <div class="table-responsive">
+                                 <table id="example3" class="table table-striped">
+                                    <thead>
+                                       <tr>
+                                          <th></th>
+                                          <th>IdPaiement</th>
+                                          <th>Type de paiement</th>
+                                          <th>Montant</th>
+                                          <th>Methode de paiement</th>
+                                          <th>Candidat</th>
+                                          <th>Email</th>
+                                          <th>Action</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
+                                          <td>#15RCW2</td>
+                                          <td>comptant</td>
+                                          <td>999$</td>
+                                          <td>carte de credit</td>
+                                          <td><strong>Tiger Nixon</strong></td>
+                                          <td>abdo</td>
+                                          <td>
+                                             <div class="d-flex ">
+                                                <a href="#" ><i class="bi bi-pencil me-3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                                <a href="#" ><i class="bi bi-trash3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                             </div>												
+                                          </td>												
+                                       </tr>
+                                       <tr>
+                                          <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
+                                          <td>#15RCW2</td>
+                                          <td>comptant</td>
+                                          <td>999$</td>
+                                          <td>carte de credit</td>
+                                          <td><strong>Tiger Nixon</strong></td>
+                                          <td>My Email</td>
+                                          <td>
+                                             <div class="d-flex ">
+                                                <a href="#" ><i class="bi bi-pencil me-3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                                <a href="#" ><i class="bi bi-trash3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                             </div>												
+                                          </td>												
+                                       </tr>
+                                       <tr>
+                                          <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
+                                          <td>#15RCW2</td>
+                                          <td>comptant</td>
+                                          <td>999$</td>
+                                          <td>carte de credit</td>
+                                          <td><strong>Tiger Nixon</strong></td>
+                                          <td>My Email</td>
+                                          <td>
+                                             <div class="d-flex ">
+                                                <a href="#" ><i class="bi bi-pencil me-3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                                <a href="#" ><i class="bi bi-trash3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                             </div>												
+                                          </td>												
+                                       </tr>
+                                       <tr>
+                                          <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
+                                          <td>#15RCW2</td>
+                                          <td>comptant</td>
+                                          <td>999$</td>
+                                          <td>carte de credit</td>
+                                          <td><strong>Tiger Nixon</strong></td>
+                                          <td>My Email</td>
+                                          <td>
+                                             <div class="d-flex ">
+                                                <a href="#" ><i class="bi bi-pencil me-3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                                <a href="#" ><i class="bi bi-trash3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                             </div>												
+                                          </td>												
+                                       </tr>
+                                       <tr>
+                                          <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
+                                          <td>#15RCW2</td>
+                                          <td>comptant</td>
+                                          <td>999$</td>
+                                          <td>carte de credit</td>
+                                          <td><strong>Tiger Nixon</strong></td>
+                                          <td>My Email</td>
+                                          <td>
+                                             <div class="d-flex ">
+                                                <a href="#" ><i class="bi bi-pencil me-3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                                <a href="#" ><i class="bi bi-trash3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                             </div>												
+                                          </td>												
+                                       </tr>
+                                       <tr>
+                                          <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
+                                          <td>#15RCW2</td>
+                                          <td>comptant</td>
+                                          <td>999$</td>
+                                          <td>carte de credit</td>
+                                          <td><strong>Tiger Nixon</strong></td>
+                                          <td>My Email</td>
+                                          <td>
+                                             <div class="d-flex ">
+                                                <a href="#" ><i class="bi bi-pencil me-3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                                <a href="#" ><i class="bi bi-trash3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                             </div>												
+                                          </td>												
+                                       </tr>
+                                       <tr>
+                                          <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
+                                          <td>#15RCW2</td>
+                                          <td>comptant</td>
+                                          <td>999$</td>
+                                          <td>carte de credit</td>
+                                          <td><strong>Tiger Nixon</strong></td>
+                                          <td>My Email</td>
+                                          <td>
+                                             <div class="d-flex ">
+                                                <a href="#" ><i class="bi bi-pencil me-3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                                <a href="#" ><i class="bi bi-trash3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                             </div>												
+                                          </td>												
+                                       </tr>
+                                       <tr>
+                                          <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
+                                          <td>#15RCW2</td>
+                                          <td>comptant</td>
+                                          <td>999$</td>
+                                          <td>carte de credit</td>
+                                          <td><strong>Tiger Nixon</strong></td>
+                                          <td>My Email</td>
+                                          <td>
+                                             <div class="d-flex ">
+                                                <a href="#" ><i class="bi bi-pencil me-3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                                <a href="#" ><i class="bi bi-trash3" style="color: #757D8A; font-size: 20px;"></i></a>
+                                             </div>												
+                                          </td>												
+                                       </tr>
+                                       
+                                       
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!-- DataTale end -->
+
+
+
+
+
+               <!-- content-wrapper ends -->
+               <!-- partial:partials/_footer.html -->
+               <footer class="footer">
+                  <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                     <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">ChedPermis</a> from FPT.</span>
+                     <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
+                  </div>
+               </footer>
+               <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+         </div>
+         <!-- page-body-wrapper ends -->
+      </div>
+      <!-- container-scroller -->
+      <!-- plugins:js -->
+      <script src="vendors/js/vendor.bundle.base.js"></script>
+      <!-- endinject -->
+      <!-- Plugin js for this page -->
+      <script src="vendors/chart.js/Chart.min.js"></script>
+      <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+      <script src="vendors/progressbar.js/progressbar.min.js"></script>
+      <!-- End plugin js for this page -->
+      <!-- inject:js -->
+      <script src="js/off-canvas.js"></script>
+      <!-- <script src="js/hoverable-collapse.js"></script> -->
+      <script src="js/template.js"></script>
+      <script src="js/settings.js"></script>
+      <script src="js/todolist.js"></script>
+      <!-- endinject -->
+      <!-- Custom js for this page-->
+      <script src="js/jquery.cookie.js" type="text/javascript"></script>
+      <script src="js/dashboard.js"></script>
+      <script src="js/Chart.roundedBarCharts.js"></script>
+
+            <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+      
+      <!-- Datatable -->
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+      <script src="./candidat/vendor/global/global.min.js"></script>
+      <script src="./candidat/vendor/datatables/js/jquery.dataTables.min.js"></script>
+      <script src="./candidat/js/plugins-init/datatables.init.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+   <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!-- End custom js for this page-->
+   </body>
+</html>
+
