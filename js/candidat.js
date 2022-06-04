@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded",()=>{
-    const rows = document.querySelectorAll("tr[data-href]");
+    const rows = document.querySelectorAll("td[data-href]");
 
     rows.forEach(row =>{
        row.addEventListener("click",()=> {

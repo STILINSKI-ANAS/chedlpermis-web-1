@@ -15,6 +15,7 @@
       <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
       <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+      <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
       <!-- endinject -->
 
       <!-- table begin -->
@@ -278,6 +279,7 @@
                      </div>
 
                   </div>
+                  
                   <!-- cards end -->
                   <!-- search begin -->
                   <div class="row justify-content-end mb-3">
@@ -302,56 +304,212 @@
                                  <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
+                              
+                              
+                              
+                              <form action="condidatform.php" method="post" enctype="multipart/form-data">
                               <div class="modal-body">
                                  <div class="row">
                                     <div class="col-md-3 border-right">
-                                        <div class="d-flex flex-column align-items-center text-center py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span> </span></div>
-                                        <div class="d-flex flex-column align-items-end text-center py-1"><label class="labels">الاسم العائلي</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                                        <div class="d-flex flex-column align-items-end text-center py-1"><label class="labels">الاسم الشخصي</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                                        <div class="d-flex flex-column align-items-end text-center py-1"><label class="labels">مكان الإزدياد</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                                        <div class="d-flex flex-column align-items-end text-center py-1"><label class="labels">العنوان</label><input type="text" class="form-control" placeholder="country" value=""></div>
+                                        <div class="d-flex flex-column align-items-center text-center">
+                                           
+                                             <div class="uploaded_file_view" id="uploaded_view">
+                                                <span class="file_remove">X</span>
+                                             </div>
+                                           
+                                          </div>
+                                        <div class="d-flex flex-column align-items-center text-center pb-5">
+                                          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                                          
+                                             <div class="">
+                                                <div class="panel">
+                                                   <div class="button_outer">
+                                                      <div class="btn_upload">
+                                                         <input type="file" id="upload_file" name="">
+                                                         Upload Image
+                                                      </div>
+                                                      <div class="processing_bar"></div>
+                                                      <div class="success_box"></div>
+                                                   </div>
+                                                </div>
+                                                <div class="error_msg"></div>
+                                                <div class="uploaded_file_view" id="uploaded_view">
+                                                   <span class="file_remove">X</span>
+                                                </div>
+                                             </div>
+                                             <script>
+                                                   var btnUpload = $("#upload_file"),
+                                                   btnOuter = $(".button_outer");
+                                                btnUpload.on("change", function(e){
+                                                   var ext = btnUpload.val().split('.').pop().toLowerCase();
+                                                   if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
+                                                      $(".error_msg").text("Not an Image...");
+                                                   } else {
+                                                      $(".error_msg").text("");
+                                                      btnOuter.addClass("file_uploading");
+                                                      setTimeout(function(){
+                                                         btnOuter.addClass("file_uploaded");
+                                                      },3000);
+                                                      var uploadedFile = URL.createObjectURL(e.target.files[0]);
+                                                      setTimeout(function(){
+                                                         $("#uploaded_view").append('<img class="rounded-circle" width="150px" src="'+uploadedFile+'" />').addClass("show");
+                                                      },3500);
+                                                   }
+                                                });
+                                                $(".file_remove").on("click", function(e){
+                                                   $("#uploaded_view").removeClass("show");
+                                                   $("#uploaded_view").find("img").remove();
+                                                   btnOuter.removeClass("file_uploading");
+                                                   btnOuter.removeClass("file_uploaded");
+                                                });
+                                             </script>
+                                      
+                                        </div>
+                                        
+                                        <div class="d-flex flex-column align-items-end text-center py-1">
+                                           <label class="labels lebels-custom">الاسم العائلي</label>
+                                           <input type="text" name="lastnameAR" class="form-control" placeholder="الاسم العائلي" value="">
+                                       </div>
+                                        <div class="d-flex flex-column align-items-end text-center py-1">
+                                           <label class="labels lebels-custom">الاسم الشخصي</label>
+                                           <input type="text" name="firstnameAR" class="form-control" placeholder="الاسم الشخصي" value="">
+                                       </div>
+                                        <div class="d-flex flex-column align-items-end text-center py-1">
+                                           <label class="labels lebels-custom">مكان الإزدياد</label>
+                                           <input type="text" name="naissanceAR" class="form-control" placeholder="مكان الإزدياد" value="">
+                                       </div>
+                                        <div class="d-flex flex-column align-items-end text-center py-1">
+                                           <label class="labels lebels-custom">العنوان</label>
+                                           <input type="text" name="adresseAR" class="form-control" placeholder="العنوان" value="">
+                                       </div>
                                      
                                        </div>
                                     <div class="col-md-9 border-right">
                                         <div class="p-3 py-5">
-                                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                                <h4 class="text-right">Profile Settings</h4>
-                                            </div>
-                                            <div class="row mt-2">
-                                                <div class="col-md-6"><label class="labels lebels-custom">Prenom</label><input type="text text-custom" class="form-control" placeholder="first name" value=""></div>
-                                                <div class="col-md-6"><label class="labels">Nom</label><input type="text" class="form-control" value="" placeholder="surname"></div>
-                                                <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
-                                                <div class="col-md-6"><label class="labels">Date de Naissance</label><input type="text" class="form-control" placeholder="education" value=""></div>
-                                                <div class="col-md-6"><label class="labels">Lieu de Naissance</label><input type="text" class="form-control" placeholder="education" value=""></div>
-                                                <div class="col-md-12"><label class="labels">Addresse</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
-                                                <div class="col-md-6"><label class="labels">N° CIN</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
-                                                <div class="col-md-6"><label class="labels">N° Téléphone</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
-                                                <div class="col-md-6"><label class="labels">Prix</label><input type="text" class="form-control" placeholder="education" value=""></div>
-                                                <div class="col-md-6"><label class="labels">Reste</label><input type="text" class="form-control" placeholder="education" value=""></div>
-                                                
+                                             <div class="d-flex justify-content-between align-items-center mb-3">
+                                                   <h4 class="text-right">Profile Settings</h4>
+                                             </div>
+                                             <div class="row mt-2">
+                                                <div class="col-md-6">
+                                                   <label class="labels lebels-custom">Prenom</label>
+                                                   <input class="form-control" name="firstName" type="text text-custom" value="" placeholder="Prenom" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <label class="labels lebels-custom">Nom</label>
+                                                   <input class="form-control" name="lastName" type="text" value="" placeholder="Nom" />
+                                                </div>
+                                                <div class="col-md-12">
+                                                   <label class="labels lebels-custom">Email</label>
+                                                   <input class="form-control" name="email" type="text" value="" placeholder="Email" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <label class="labels lebels-custom">Date de Naissance</label>
+                                                   <input class="form-control" name="dateOfBirth" type="date" value="" placeholder="Date de Naissance" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <label class="labels lebels-custom">Lieu de Naissance</label>
+                                                   <input class="form-control" name="lieuOfBirth" type="text" value="" placeholder="Lieu de Naissance" />
+                                                </div>
+                                                <div class="col-md-12">
+                                                   <label class="labels lebels-custom">Addresse</label>
+                                                   <input class="form-control" name="adress" type="text" value="" placeholder="Addresse" />
+                                                </div>
+                                                <div class="col-md-6">  
+                                                   <label class="labels lebels-custom">N° CIN</label>
+                                                   <input class="form-control" name="cin" type="text" value="" placeholder="N° CIN" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <label class="labels lebels-custom">N° Téléphone</label>
+                                                   <input class="form-control" name="phoneNumber" type="text" value="" placeholder="N° Téléphone" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <label class="labels lebels-custom">Prix</label>
+                                                   <input class="form-control" name="lastName" type="text" value="" placeholder="Prix" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <label class="labels lebels-custom">Reste</label>
+                                                   <input class="form-control" name="lastName" type="text" value="" placeholder="Reste" />
+                                                </div>
+                                                   
+                                             </div>
+                                            <div class="row mt-3">
+                                             <div class="col-md-12">
+                                                <label class="labels lebels-custom">
+                                                   Date d'entrée
+                                                </label>
+                                                <input class="form-control" name="dateEntree" type="date" value="" placeholder="Date d'entrée" />
+                                             </div>
+                                             <div class="col-md-12">
+                                                <label class="labels lebels-custom">
+                                                   Categorie de Pérmis
+                                                </label>
+                                                <input class="form-control" name="categoriePermis" type="text" value="" placeholder="Categorie de Pérmis" />
+                                             </div>
+                                             <div class="col-md-12">
+                                                <label class="labels lebels-custom">
+                                                   N°(Site ministère)
+                                                </label>
+                                                <input class="form-control" name="nSiteministere" type="text" value="" placeholder="N°(Site ministère)" />
+                                             </div>
+                                             <div class="col-md-6">
+                                                <label class="labels lebels-custom">
+                                                   N° Contrat
+                                                </label>
+                                                <input class="form-control" name="nContrat" type="text" value="" placeholder="N° Contrat" />
+                                             </div>
+                                             <div class="col-md-6">
+                                                <label class="labels lebels-custom">
+                                                   Date de Contrat
+                                                </label>
+                                                <input class="form-control" name="dateContrat" type="date" value="" placeholder="Date de Contrat" />
+                                             </div>
+                                             <div class="col-md-6">
+                                                <label class="labels lebels-custom">
+                                                   N Declaration
+                                                </label>
+                                                <input class="form-control" name="nDeclaration" type="text" value="" placeholder="N Declaration" />
+                                             </div>
+                                             <div class="col-md-6">
+                                                <label class="labels lebels-custom">
+                                                   Date de Declaration
+                                                </label>
+                                                <input class="form-control" name="dateDeclaration" type="date" value="" placeholder="Date de Declaration" />
+                                             </div>
+                                             <div class="col-md-6">
+                                                <label class="labels lebels-custom">
+                                                   Date Examen 1
+                                                </label>
+                                                <input class="form-control" name="dateExamen1" type="date" value="" placeholder="Date Examen 1" />
+                                             </div>
+                                             <div class="col-md-6">
+                                                <label class="labels lebels-custom">
+                                                   Date Examen 2
+                                                </label>
+                                                <input class="form-control" name="dateExamen2" type="date" value="" placeholder="Date Examen 2" />
+                                             </div>
+                                             <div class="col-md-6">
+                                                <label class="labels lebels-custom">
+                                                   Langue
+                                                </label>
+                                                <input class="form-control" name="langue" type="text" value="" placeholder="Langue" />
+                                             </div>
+                                             <div class="col-md-6">
+                                                <label class="labels lebels-custom">
+                                                   Apte/Inapte
+                                                </label>
+                                                <input class="form-control" name="apteInapte" type="text" value="" placeholder="Apte/Inapte" />
+                                             </div>
+                                             
                                             </div>
                                             <div class="row mt-3">
-                                                <div class="col-md-12"><label class="labels">Date de d'entrée</label><input type="text" class="form-control" placeholder="education" value=""></div>
-                                                <div class="col-md-12"><label class="labels">Categorie de Pérmis</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                                                <div class="col-md-12"><label class="labels">N°(Site ministère)</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-6"><label class="labels">N° Contrat</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-6"><label class="labels">Date de Contrat</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-6"><label class="labels">N Declaration</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-6"><label class="labels">Date de Declaration</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-6"><label class="labels">Date Examen 1</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-6"><label class="labels">Date Examen 2</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-6"><label class="labels">Langue</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-6"><label class="labels">Apte/Inapte</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                            </div>
-                                            <div class="row mt-3">
-                                                <div class="col-md-12"><label class="labels">N° de Pérmis en cas d'éxtension</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                                                <div class="col-md-12"><label class="labels">Categorie de Pérmis en cas d'éxtension</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-12"><label class="labels">Date de Pérmis en cas d'éxtension</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-12"><label class="labels">N° d'attestation de formation Théorique</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-12"><label class="labels">N° d'attestation de formation Pratique</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-6"><label class="labels">Moniteur 1</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-6"><label class="labels">Moniteur 2</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                                                <div class="col-md-12"><label class="labels">Véhicule</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                                                <div class="col-md-12"><label class="labels lebels-custom">N° de Pérmis en cas d'éxtension</label><input type="text" class="form-control" placeholder="country" value=""></div>
+                                                <div class="col-md-12"><label class="labels lebels-custom">Categorie de Pérmis en cas d'éxtension</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                                                <div class="col-md-12"><label class="labels lebels-custom">Date de Pérmis en cas d'éxtension</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                                                <div class="col-md-12"><label class="labels lebels-custom">N° d'attestation de formation Théorique</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                                                <div class="col-md-12"><label class="labels lebels-custom">N° d'attestation de formation Pratique</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                                                <div class="col-md-6"><label class="labels lebels-custom">Moniteur 1</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                                                <div class="col-md-6"><label class="labels lebels-custom">Moniteur 2</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                                                <div class="col-md-12"><label class="labels lebels-custom">Véhicule</label><input type="text" class="form-control" value="" placeholder="state"></div>
                                              </div>
                                              <div class="row">
                                                 </div>
@@ -360,10 +518,13 @@
                                     </div>
                                 </div>
                               </div>
+                              
                               <div class="modal-footer">
-                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                 <button type="button" class="btn btn-primary todo-list-add-btn">Add</button>
+                                 
+                                 <input type="submit" class="btn btn-primary" value="Submit">
+                                 <a class="btn btn-secondary ml-2" data-bs-dismiss="modal">Cancel</a>
                               </div>
+                              </form>
                            </div>
                            </div>
                         </div>
@@ -395,16 +556,16 @@
                                        </tr>
                                     </thead>
                                     <tbody>
-                                       <tr data-href="https://google.com">
-                                          <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
-                                          <td>1</td>
-                                          <td>ANAS</td>
-                                          <td>KADIRI</td>
-                                          <td>JB1542</td>
-                                          <td>02/05/2022</td>
-                                          <td>B</td>
-                                          <td>0662584512</td>
-                                          <td>
+                                       <tr>
+                                          <td data-href="profile.html"><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
+                                          <td data-href="profile.html">1</td>
+                                          <td data-href="profile.html">ANAS</td>
+                                          <td data-href="profile.html">KADIRI</td>
+                                          <td data-href="profile.html">JB1542</td>
+                                          <td data-href="profile.html">02/05/2022</td>
+                                          <td data-href="profile.html">B</td>
+                                          <td data-href="profile.html">0662584512</td>
+                                          <td >
                                              <div class=" ">
                                                 <a href="#" ><i class="bi bi-pencil me-3" style="color: #757D8A; font-size: 20px;"></i></a>
                                                 <a href="#" ><i class="bi bi-trash3" style="color: #757D8A; font-size: 20px;"></i></a>
@@ -532,6 +693,7 @@
 
             <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    
       
       <!-- Datatable -->
       <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
